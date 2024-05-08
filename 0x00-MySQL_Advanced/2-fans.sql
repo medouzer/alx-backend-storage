@@ -1,4 +1,4 @@
---Best band ever!
+-- Best band ever!
 SELECT origin, SUM(fans) as nb_fans
 from metal_bands
 GROUP BY origin

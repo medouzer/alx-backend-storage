@@ -1,4 +1,4 @@
---Buy buy buy
+-- Buy buy buy
 CREATE TRIGGER dec_quantity
 AFTER INSERT ON orders
 FOR EACH ROW

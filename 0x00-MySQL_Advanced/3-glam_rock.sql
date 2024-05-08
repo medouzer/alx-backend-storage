@@ -1,4 +1,4 @@
---Old school band
+-- Old school band
 SELECT band_name,
 CASE
     WHEN split IS NOT NULL THEN (split - formed)
