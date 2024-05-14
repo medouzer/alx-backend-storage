@@ -5,6 +5,7 @@ from pymongo import MongoClient
 
 
 def show_logs():
+    """function show_logs"""
     client = MongoClient('mongodb://127.0.0.1:27017')
     nginx_collection = client.logs.nginx
 
@@ -26,4 +27,5 @@ def show_logs():
     print(f"{get_status_logs} status check")
 
 if __name__ == "__main__":
+    """main"""
     show_logs()
