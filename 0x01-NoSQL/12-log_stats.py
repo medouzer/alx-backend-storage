@@ -17,7 +17,7 @@ def show_logs():
     delete_logs = nginx_collection.count_documents({"method": "DELETE"})
     get_status_logs = nginx_collection.count_documents(
         {"method": "GET", "path": "/status"})
-    print(total_logs)
+    print(f"{total_logs} logs")
     print("Methods:")
     print(f"\tmethod GET: {get_logs}")
     print(f"\tmethod POST: {post_logs}")
