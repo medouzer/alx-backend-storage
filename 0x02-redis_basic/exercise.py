@@ -21,11 +21,11 @@ class Cache:
         return key
 
 
-    def get(self, key: str, fn: Callable = None):
+    def get(self, key: str, fn: Callable = None) -> Any:
         """method get"""
         value = self._redis.get(key)
         if value is None:
-            return None
+            return
         if fn is int:
             return self.get_int(value)
         if fn is str:
