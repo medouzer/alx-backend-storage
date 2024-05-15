@@ -22,9 +22,14 @@ class Cache:
 
 
     def get(self, key: str, fn: Callable = None):
+        """method get"""
         value = self._redis.get(key)
         if value is None:
             return None
+        if fn is int:
+            return self.get_int(value)
+        if fn is str:
+            return self.get_str(value)
         if fn is None:
             return value
         return fn(value)
