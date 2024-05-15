@@ -19,3 +19,21 @@ class Cache:
         key = str(uuid.uuid4())
         self._redis.set(key, data)
         return key
+
+
+    def get(self, key: str, fn: Callable = None):
+        value = self._redis.get(key)
+        if value is None:
+            return None
+        if fn is None:
+            return value
+        return fn(value)
+
+
+    def get_str(self, key: str) -> str:
+        """method get_str"""
+        return data.decode("utf-8")
+
+    def get_int(self, key: str) -> int:
+        """method get_int"""
+        return int(data)
