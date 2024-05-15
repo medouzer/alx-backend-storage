@@ -21,7 +21,7 @@ class Cache:
         return key
 
 
-    def get(self, key: str, fn: Callable = None) -> Any:
+    def get(self, key: str, fn: Optional[Callable] = None) -> Any:
         """method get"""
         value = self._redis.get(key)
         if value is None:
