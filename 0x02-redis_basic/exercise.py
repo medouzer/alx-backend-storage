@@ -34,11 +34,10 @@ class Cache:
             return value
         return fn(value)
 
-
-    def get_str(self, key: str) -> str:
+    def get_str(self, data: bytes) -> str:
         """method get_str"""
         return data.decode("utf-8")
 
-    def get_int(self, key: str) -> int:
+    def get_int(self, data: bytes) -> int:
         """method get_int"""
         return int(data)
