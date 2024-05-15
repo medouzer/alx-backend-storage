@@ -24,15 +24,15 @@ class Cache:
     def get(self, key: str, fn: Optional[Callable] = None) -> Any:
         """method get"""
         value = self._redis.get(key)
-        if value is None:
+        if not value:
             return
         if fn is int:
             return self.get_int(value)
         if fn is str:
             return self.get_str(value)
-        if fn is None:
-            return value
-        return fn(value)
+        if callable(fn):
+            return fn(value)
+        return value
 
     def get_str(self, data: bytes) -> str:
         """method get_str"""
